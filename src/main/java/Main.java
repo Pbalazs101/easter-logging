@@ -6,18 +6,27 @@ public class Main {
 
     private static final Logger logger = LogManager.getLogger();
 
+    private static void sleep(){
+        try{
+            Thread.sleep(1500);
+        }
+        catch (InterruptedException e){
+            System.out.println("Execution got interrupted");
+        }
+    }
+
     public static void main(String[] args) {
 
         for (int i = 0; i < 2; i++)
         {
-            try {
-                Thread.sleep(2000);
-            }
-            catch (InterruptedException e){
-                System.out.println("Execution got interrupted");
-            }
-
-            logger.warn("This is a WARN message");
+            sleep();
+            logger.fatal("Zöld erdőben jártam,");
+            sleep();
+            logger.warn("Kék ibolyát láttam,");
+            sleep();
+            logger.info("El akart hervadni,");
+            sleep();
+            logger.error("Szabad-e locsolni?");
         }
         /*
         logger.fatal("This is a FATAL message");
