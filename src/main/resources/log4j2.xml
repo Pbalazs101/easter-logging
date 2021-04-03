@@ -1,4 +1,4 @@
-<Configuration status="ERROR">
+<Configuration status="Error">
     <Properties>
         <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
     </Properties>
@@ -6,10 +6,25 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%highlight{${LOG_PATTERN}}"/>
         </Console>
+        <File name="File1" fileName="statements.log" append="false">
+          <MarkerFilter marker="STATEMENT" onMatch="ACCEPT" onMismatch="DENY"/>
+
+        </File>
+          <File name="File2" fileName="questions.log" append="false">
+            <MarkerFilter marker="QUESTION" onMatch="ACCEPT" onMismatch="DENY"/>
+        </File>
+
+        <File name="File3" fileName="missing_marker.log" append="false">
+        <NoMarkerFilter onMatch="ACCEPT" onMismatch="DENY"/>
+      </File>
+
     </Appenders>
     <Loggers>
-        <Root level="info">
+        <Root level="all">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="File1"/>
+            <AppenderRef ref="File2"/>
+            <AppenderRef ref="File3"/>
         </Root>
     </Loggers>
 </Configuration>
