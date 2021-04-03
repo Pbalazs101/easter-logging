@@ -24,13 +24,13 @@ public class Main {
         for (int i = 0; i < 2; i++)
         {
             sleep();
-            logger.fatal("Zöld erdőben jártam,");
+            logger.fatal(STATEMENT_MARKER,"Zöld erdőben jártam,");
             sleep();
             logger.warn("Kék ibolyát láttam,");
             sleep();
-            logger.info("El akart hervadni,");
+            logger.info(STATEMENT_MARKER,"El akart hervadni,");
             sleep();
-            logger.error("Szabad-e locsolni?");
+            logger.error(QUESTION_MARKER, "Szabad-e locsolni?");
         }
         /*
         logger.fatal("This is a FATAL message");
