@@ -1,10 +1,14 @@
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 public class Main {
 
     private static final Logger logger = LogManager.getLogger();
+    private static final Marker STATEMENT_MARKER = MarkerManager.getMarker("STATEMENT");
+    private static final Marker QUESTION_MARKER = MarkerManager.getMarker("QUESTION");
 
     private static void sleep(){
         try{
