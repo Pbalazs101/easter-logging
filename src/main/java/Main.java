@@ -28,7 +28,7 @@ public class Main {
             System.out.println("Missing argument. Using default value: 1");
         }
 
-        for (int i = 1; i < iterations+1; i++)
+        for (int i = 1; i < iterations+1; i++) //Starting from 1 in order to match the iteration number with the current i variable. 1 added to iterations so it doesn't affect cl arguments.
         {
             ThreadContext.put("iteration",String.format("%d",i));
 
