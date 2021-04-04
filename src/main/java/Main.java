@@ -1,10 +1,5 @@
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
-
-import java.util.Optional;
+import org.apache.logging.log4j.*;
 
 public class Main {
 
@@ -30,11 +25,13 @@ public class Main {
             iterations = Integer.parseInt(args[0]);
         }
         catch(Exception e){
-            System.out.println("Missing argument defaulting to 1");
+            System.out.println("Missing argument. Using default value: 1");
         }
 
-        for (int i = 0; i < iterations; i++)
+        for (int i = 1; i < iterations+1; i++)
         {
+            ThreadContext.put("iteration",String.format("%d",i));
+
             sleep();
             logger.fatal(STATEMENT_MARKER,"Zöld erdőben jártam,");
             sleep();
