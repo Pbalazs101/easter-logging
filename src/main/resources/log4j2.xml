@@ -18,6 +18,13 @@
         <NoMarkerFilter onMatch="ACCEPT" onMismatch="DENY"/>
       </File>
 
+      <File name="File4" fileName="Győrfi_Pál.log" append="false">
+      <TimeFilter start="20:00:00" end="05:00:00" onMatch="ACCEPT" onMismatch="DENY"/>
+    </File>
+
+
+
+
     </Appenders>
     <Loggers>
         <Root level="all">
@@ -25,6 +32,7 @@
             <AppenderRef ref="File1"/>
             <AppenderRef ref="File2"/>
             <AppenderRef ref="File3"/>
+            <AppenderRef ref="File4"/>
         </Root>
     </Loggers>
 </Configuration>
