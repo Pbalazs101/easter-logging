@@ -1,6 +1,6 @@
 <Configuration status="Error">
     <Properties>
-        <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg ---- Number of current iteration: %X{iteration}%n</Property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
@@ -21,10 +21,6 @@
       <File name="File4" fileName="Győrfi_Pál.log" append="false">
       <TimeFilter start="20:00:00" end="05:00:00" onMatch="ACCEPT" onMismatch="DENY"/>
     </File>
-
-
-
-
     </Appenders>
     <Loggers>
         <Root level="all">
