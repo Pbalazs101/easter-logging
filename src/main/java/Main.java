@@ -33,13 +33,13 @@ public class Main {
             ThreadContext.put("iteration",String.format("%d",i));
 
             sleep();
-            logger.fatal(STATEMENT_MARKER,"Zöld erdőben jártam,");
+            logger.fatal(STATEMENT_MARKER,"E szép házba nyitottam,");
             sleep();
-            logger.warn("Kék ibolyát láttam,");
+            logger.warn("Nefelejcset találtam,");
             sleep();
-            logger.info(STATEMENT_MARKER,"El akart hervadni,");
+            logger.info(STATEMENT_MARKER,"Nem hagyhatom hervadni,");
             sleep();
-            logger.error(QUESTION_MARKER, "Szabad-e locsolni?");
+            logger.error(QUESTION_MARKER, "Meg szabad-e locsolni?");
         }
     }
 }
