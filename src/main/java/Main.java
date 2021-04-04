@@ -4,6 +4,8 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
+import java.util.Optional;
+
 public class Main {
 
     private static final Logger logger = LogManager.getLogger();
@@ -22,7 +24,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        for (int i = 0; i < 2; i++)
+        int iterations = 1;
+
+        try{
+            iterations = Integer.parseInt(args[0]);
+        }
+        catch(Exception e){
+            System.out.println("Missing argument defaulting to 1");
+        }
+
+        for (int i = 0; i < iterations; i++)
         {
             sleep();
             logger.fatal(STATEMENT_MARKER,"Zöld erdőben jártam,");
